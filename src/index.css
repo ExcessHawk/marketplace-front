@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+@import '@heroui/styles';
+
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/bricolage-grotesque';
+
+/* Visual identity for this project — see proyectos/00-base/UI-KITS.md.
+   Bricolage for display, Inter for body, generous radius: commercial, not
+   dashboard. */
+@theme {
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+
+  --radius-marketplace: 1rem;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    /* Prices sit in columns all over this app; without this they read crooked. */
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}

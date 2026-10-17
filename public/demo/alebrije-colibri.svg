@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Alebrije colibrí pequeño">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#132a2e"/>
+      <stop offset="1" stop-color="#0b1a1d"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#7b3fa0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg5)"/>
+
+  <g stroke="#1f4f4a" stroke-width="8" fill="none" opacity="0.6">
+    <path d="M120 700c80-40 140-110 160-200"/>
+    <path d="M680 700c-80-40-140-110-160-200"/>
+  </g>
+
+  <path d="M430 330c80-60 170-60 220-10-50 30-120 60-190 70z" fill="url(#wing)"/>
+  <path d="M370 330c-80-60-170-60-220-10 50 30 120 60 190 70z" fill="url(#wing)" opacity="0.8"/>
+
+  <path d="M400 290c54 0 92 44 92 104 0 64-40 120-92 150-52-30-92-86-92-150 0-60 38-104 92-104z" fill="#e8b23a"/>
+  <path d="M400 290c-54 0-92 44-92 104 0 64 40 120 92 150z" fill="#d94f4f" opacity="0.65"/>
+
+  <circle cx="400" cy="268" r="52" fill="#17a398"/>
+  <circle cx="378" cy="258" r="11" fill="#0b1a1d"/>
+  <path d="M400 240l140-74-134 104z" fill="#f4f1de"/>
+
+  <g fill="#f4a259">
+    <circle cx="400" cy="430" r="16"/>
+    <circle cx="400" cy="490" r="12"/>
+    <circle cx="400" cy="540" r="9"/>
+  </g>
+
+  <path d="M400 560c18 46 10 96-22 130 44-16 74-56 78-104z" fill="#7b3fa0"/>
+</svg>

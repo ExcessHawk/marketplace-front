@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Alebrije jaguar en copal">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2a3a"/>
+      <stop offset="1" stop-color="#0f1a26"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg4)"/>
+  <ellipse cx="400" cy="650" rx="210" ry="26" fill="#09121b"/>
+
+  <path d="M250 560c-30-50-40-120-10-180 34-68 110-104 170-104s116 30 150 86c30 50 26 128-6 176-26 40-78 62-152 62s-128-20-152-40z" fill="#e8b23a"/>
+  <path d="M250 560c-30-50-40-120-10-180 34-68 110-104 170-104 20 0 40 4 58 10-80 30-128 96-128 176 0 62 30 114 78 148-74 2-144-14-168-50z" fill="#c9912a"/>
+
+  <path d="M292 304l-44-74 92 24z" fill="#7b3fa0"/>
+  <path d="M508 304l44-74-92 24z" fill="#7b3fa0"/>
+
+  <g fill="#17a398">
+    <circle cx="330" cy="400" r="34"/>
+    <circle cx="470" cy="400" r="34"/>
+  </g>
+  <g fill="#0f1a26">
+    <ellipse cx="330" cy="400" rx="12" ry="22"/>
+    <ellipse cx="470" cy="400" rx="12" ry="22"/>
+  </g>
+
+  <path d="M368 486h64l-32 34z" fill="#d94f4f"/>
+  <path d="M400 520v30" stroke="#0f1a26" stroke-width="8" stroke-linecap="round"/>
+  <path d="M400 550c-30 0-52-14-62-30M400 550c30 0 52-14 62-30" fill="none" stroke="#0f1a26" stroke-width="8" stroke-linecap="round"/>
+
+  <g fill="#e05c3e" opacity="0.95">
+    <circle cx="258" cy="420" r="16"/>
+    <circle cx="542" cy="420" r="16"/>
+    <circle cx="300" cy="300" r="12"/>
+    <circle cx="500" cy="300" r="12"/>
+    <circle cx="400" cy="620" r="14"/>
+  </g>
+  <g fill="#f4f1de" opacity="0.9">
+    <circle cx="258" cy="420" r="7"/>
+    <circle cx="542" cy="420" r="7"/>
+  </g>
+</svg>

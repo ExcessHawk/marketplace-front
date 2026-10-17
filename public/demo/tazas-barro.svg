@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Juego de tazas de barro bruñido">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6efe8"/>
+      <stop offset="1" stop-color="#e8dacd"/>
+    </linearGradient>
+    <linearGradient id="clay2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a0522d"/>
+      <stop offset="0.4" stop-color="#c76f43"/>
+      <stop offset="1" stop-color="#8c4526"/>
+    </linearGradient>
+    <linearGradient id="clay3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#8c4526"/>
+      <stop offset="0.45" stop-color="#b4623a"/>
+      <stop offset="1" stop-color="#76381e"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg2)"/>
+  <ellipse cx="400" cy="600" rx="250" ry="30" fill="#d6c2b0"/>
+
+  <g>
+    <path d="M186 420h150l-16 160a26 26 0 0 1-26 22h-66a26 26 0 0 1-26-22z" fill="url(#clay3)"/>
+    <ellipse cx="261" cy="420" rx="75" ry="20" fill="#c97b4e"/>
+    <ellipse cx="261" cy="420" rx="60" ry="14" fill="#5f2d18"/>
+    <path d="M336 456c38 0 52 26 52 50s-18 46-48 46" fill="none" stroke="#8c4526" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <path d="M470 400h170l-18 180a28 28 0 0 1-28 24h-78a28 28 0 0 1-28-24z" fill="url(#clay2)"/>
+    <ellipse cx="555" cy="400" rx="85" ry="22" fill="#d98a58"/>
+    <ellipse cx="555" cy="400" rx="68" ry="16" fill="#6b3119"/>
+    <path d="M640 440c42 0 58 28 58 54s-20 50-52 50" fill="none" stroke="#a0522d" stroke-width="20" stroke-linecap="round"/>
+    <g opacity="0.35" fill="#f6efe8">
+      <rect x="486" y="470" width="138" height="6" rx="3"/>
+      <rect x="490" y="500" width="130" height="6" rx="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(0 -60)">
+    <path d="M330 300h130l-14 136a22 22 0 0 1-22 18h-58a22 22 0 0 1-22-18z" fill="url(#clay3)"/>
+    <ellipse cx="395" cy="300" rx="65" ry="17" fill="#c97b4e"/>
+    <ellipse cx="395" cy="300" rx="52" ry="12" fill="#5f2d18"/>
+  </g>
+</svg>

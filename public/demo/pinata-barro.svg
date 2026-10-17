@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Piñata de barro pintada a mano">
+  <defs>
+    <radialGradient id="bg3" cx="0.5" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#fff6e5"/>
+      <stop offset="1" stop-color="#f2e0c4"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg3)"/>
+  <line x1="400" y1="0" x2="400" y2="210" stroke="#9c8463" stroke-width="6"/>
+
+  <g>
+    <path d="M400 210 L470 300 L400 330 L330 300 Z" fill="#e4572e"/>
+    <path d="M590 400 L700 360 L660 470 L560 440 Z" fill="#f4a259"/>
+    <path d="M210 400 L100 360 L140 470 L240 440 Z" fill="#2a9d8f"/>
+    <path d="M400 600 L340 710 L460 710 Z" fill="#e9c46a"/>
+    <path d="M560 560 L660 640 L540 660 Z" fill="#8e44ad"/>
+    <path d="M240 560 L140 640 L260 660 Z" fill="#2176ae"/>
+  </g>
+
+  <circle cx="400" cy="430" r="180" fill="#e76f51"/>
+  <path d="M220 430a180 180 0 0 1 360 0z" fill="#f4a259"/>
+  <g fill="none" stroke="#fff6e5" stroke-width="14" opacity="0.85">
+    <path d="M232 380h336"/>
+    <path d="M226 480h348"/>
+  </g>
+  <g fill="#2a9d8f">
+    <circle cx="320" cy="430" r="26"/>
+    <circle cx="480" cy="430" r="26"/>
+    <circle cx="400" cy="540" r="22"/>
+    <circle cx="400" cy="320" r="22"/>
+  </g>
+  <g fill="#e9c46a">
+    <circle cx="320" cy="430" r="12"/>
+    <circle cx="480" cy="430" r="12"/>
+  </g>
+</svg>
