@@ -11,7 +11,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(root, 'src'),
-      '@marketplace/contracts': path.resolve(root, '../shared/schemas/index.ts'),
+      '@marketplace/contracts': path.resolve(
+        root,
+        'node_modules/@marketplace/contracts/schemas/index.ts',
+      ),
     },
   },
   server: {

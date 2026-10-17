@@ -24,7 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@marketplace/contracts": ["../shared/schemas/index.ts"]
+      "@marketplace/contracts": ["./node_modules/@marketplace/contracts/schemas/index.ts"]
     }
   },
   "include": ["src", "../shared/schemas"]
