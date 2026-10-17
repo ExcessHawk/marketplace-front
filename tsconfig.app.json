@@ -27,5 +27,5 @@
       "@marketplace/contracts": ["./node_modules/@marketplace/contracts/schemas/index.ts"]
     }
   },
-  "include": ["src", "../shared/schemas"]
+  "include": ["src"]
 }
