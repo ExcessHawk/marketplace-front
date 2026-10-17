@@ -1,7 +1,7 @@
 import { Button, Card, Form, Label, ListBox, Select } from '@heroui/react'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ArrowLeftIcon, PlusIcon, TrashIcon } from '@phosphor-icons/react'
-import { useEffect } from 'react'
+import { ArrowLeftIcon, ImageIcon, PlusIcon, TrashIcon, XIcon } from '@phosphor-icons/react'
+import { useEffect, useRef } from 'react'
 import {
   Controller,
   useFieldArray,
@@ -24,7 +24,9 @@ import {
   type SellerProductDetail,
   type UpdateProductDto,
 } from '@marketplace/contracts'
+import { UPLOAD_ACCEPT } from '@marketplace/contracts'
 import { useCategories } from '../../api/catalog'
+import { revisarImagen, useUploadImage } from '../../api/uploads'
 import {
   useCreateProduct,
   useReplaceVariants,
@@ -76,6 +78,105 @@ function CategorySelect<T extends FieldValues, TT = T>({
           </Select>
         </div>
       )}
+    />
+  )
+}
+
+/**
+ * Fotos de una variante.
+ *
+ * La primera es la que sale en el catálogo, y eso se dice en pantalla: sin
+ * decirlo, el orden parece decorativo y nadie entiende por qué la portada
+ * muestra una y no otra.
+ */
+function ImageField({
+  control,
+  index,
+}: {
+  control: Control<ReplaceVariantsInput, any, any>
+  index: number
+}) {
+  const subir = useUploadImage()
+  const input = useRef<HTMLInputElement>(null)
+
+  return (
+    <Controller
+      control={control}
+      name={`variants.${index}.imageKeys` as FieldPath<ReplaceVariantsInput>}
+      render={({ field }) => {
+        const claves = (field.value as string[] | undefined) ?? []
+
+        const elegir = async (archivos: FileList | null) => {
+          if (!archivos?.length) return
+          const nuevas: string[] = []
+          for (const archivo of Array.from(archivos)) {
+            const problema = revisarImagen(archivo)
+            if (problema) {
+              toast.error(`${archivo.name}: ${problema}`)
+              continue
+            }
+            try {
+              const subida = await subir.mutateAsync(archivo)
+              nuevas.push(subida.url)
+            } catch (error) {
+              toast.error(`${archivo.name}: ${errorMessage(error)}`)
+            }
+          }
+          if (nuevas.length) field.onChange([...claves, ...nuevas])
+          if (input.current) input.current.value = ''
+        }
+
+        return (
+          <div className="space-y-2">
+            <Label>Fotos</Label>
+            <div className="flex flex-wrap items-center gap-2">
+              {claves.map((clave, i) => (
+                <div
+                  key={clave}
+                  className="group relative size-20 overflow-hidden rounded-(--radius-marketplace) border border-(--color-default-200)"
+                >
+                  <img src={clave} alt="" className="size-full object-cover" />
+                  {i === 0 && (
+                    <span className="absolute inset-x-0 bottom-0 bg-black/60 text-center text-[10px] text-white">
+                      portada
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    aria-label="Quitar foto"
+                    onClick={() => field.onChange(claves.filter((c) => c !== clave))}
+                    className="absolute right-1 top-1 rounded-full bg-black/60 p-0.5 text-white opacity-0 transition group-hover:opacity-100 focus:opacity-100"
+                  >
+                    <XIcon size={12} weight="bold" />
+                  </button>
+                </div>
+              ))}
+
+              <button
+                type="button"
+                onClick={() => input.current?.click()}
+                disabled={subir.isPending}
+                className="flex size-20 flex-col items-center justify-center gap-1 rounded-(--radius-marketplace) border border-dashed border-(--color-default-300) text-xs opacity-70 transition hover:opacity-100 disabled:opacity-40"
+              >
+                <ImageIcon size={18} weight="duotone" />
+                {subir.isPending ? 'Subiendo…' : 'Agregar'}
+              </button>
+
+              <input
+                ref={input}
+                type="file"
+                accept={UPLOAD_ACCEPT}
+                multiple
+                hidden
+                onChange={(e) => void elegir(e.target.files)}
+              />
+            </div>
+            <p className="text-xs opacity-60">
+              JPEG, PNG o WebP, hasta 2 MB. La primera es la que se ve en el catálogo.
+            </p>
+          </div>
+        )
+      }}
     />
   )
 }
@@ -154,6 +255,8 @@ function VariantFields({
                 description="Opcional. Único dentro del producto."
               />
             </div>
+
+            <ImageField control={control} index={index} />
 
             {values?.[index]?.priceCents === 0 && (
               <p className="text-xs opacity-60">Precio en $0.00 — ¿seguro?</p>
